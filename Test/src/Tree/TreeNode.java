@@ -1,10 +1,10 @@
 package Tree;
 
 public class TreeNode {
-    int val;
+    char val;
     TreeNode left;
     TreeNode right;
-    public TreeNode(int x) {
+    public TreeNode(char x) {
         val = x;
     }
 }
