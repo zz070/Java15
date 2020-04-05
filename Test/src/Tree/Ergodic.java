@@ -52,9 +52,30 @@ public class Ergodic {
     非递归中序非递归遍历二叉树
             中序遍历的次序是：左跟右
      */
+    public static void inOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        Stack<TreeNode> tree = new Stack<>();
+        TreeNode cur = root;
+        while(true){
+            while(cur != null){
+                tree.push(cur);
+                cur = cur.left;
+            }
+            if(tree.isEmpty()){
+                break;
+            }
+           TreeNode  top = tree.pop();
+            System.out.println(top.val+" ");
+            cur = top.right;
+        }
+    }
     public static void main(String[] args) {
         TreeNode root = build();
         System.out.print("先序遍历二叉树:");
         preOrder(root);
+        System.out.print("中序遍历二叉树:");
+        inOrder(root);
     }
 }
