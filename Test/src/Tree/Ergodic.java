@@ -25,7 +25,7 @@ public class Ergodic {
 
     /*
     非递归先序遍历二叉树
-            先序遍历的次序是：跟左右；
+            先序遍历的次序是：根左右；
             借助栈，先将root入栈，在栈不为空的情况下，
             （1）出栈，访问root结点，
             （2）再分别将他的右子树和左子树入栈，
@@ -50,7 +50,7 @@ public class Ergodic {
     }
     /*
     非递归中序非递归遍历二叉树
-            中序遍历的次序是：左跟右
+            中序遍历的次序是：左根右
      */
     public static void inOrder(TreeNode root){
         if(root == null){
@@ -67,15 +67,49 @@ public class Ergodic {
                 break;
             }
            TreeNode  top = tree.pop();
-            System.out.println(top.val+" ");
+            System.out.print(top.val+"  ");
             cur = top.right;
+        }
+    }
+    /*
+    非递归后序遍历二叉树
+            后序遍历的次序是：左右根
+            非递归后序遍历与中序遍历类似，不同的是，后序遍历要考虑到，访问到的结点的右子树是否入栈
+     */
+    public static void postOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        Stack<TreeNode> tree = new Stack<>();
+        TreeNode cur = root;
+        TreeNode pre = null;
+        while(true){
+            while(cur != null){
+                tree.push(cur);
+                cur = cur.left;
+            }
+            if(tree.isEmpty()){
+                break;
+            }
+            TreeNode top = tree.peek();
+            if(top.right == null || pre == top.right){
+                System.out.print(top.val + "  ");
+                tree.pop();
+                pre = top;
+            }else{
+                cur = top.right;
+            }
         }
     }
     public static void main(String[] args) {
         TreeNode root = build();
         System.out.print("先序遍历二叉树:");
         preOrder(root);
+        System.out.println();
         System.out.print("中序遍历二叉树:");
         inOrder(root);
+        System.out.println();
+        System.out.print("后序遍历二叉树:");
+        postOrder(root);
     }
 }
