@@ -39,7 +39,7 @@ public class Ergodic {
         tree.push(root);
         while(!tree.isEmpty()){
             TreeNode top = tree.pop();
-            System.out.println(top.val + "  ");
+            System.out.print(top.val + "  ");
             if(top.right != null){
                 tree.push(top.right);
             }
@@ -51,6 +51,11 @@ public class Ergodic {
     /*
     非递归中序非递归遍历二叉树
             中序遍历的次序是：左根右
+            借助栈实现
+            （1）从root出发，向左找，遇到的所有元素全部入栈，直到null为止；
+            （2）找到最左后，出栈并访问这个元素；
+            （3）将刚才元素的右子树作为起点继续向左找；
+            （4）回到（2），直到栈为空
      */
     public static void inOrder(TreeNode root){
         if(root == null){
@@ -74,7 +79,9 @@ public class Ergodic {
     /*
     非递归后序遍历二叉树
             后序遍历的次序是：左右根
-            非递归后序遍历与中序遍历类似，不同的是，后序遍历要考虑到，访问到的结点的右子树是否入栈
+            非递归后序遍历与中序遍历类似，不同的是，后序遍历要考虑到，
+            （1）栈顶元素的右子树为空
+            （2）栈顶元素的右子树访问过了
      */
     public static void postOrder(TreeNode root){
         if(root == null){
