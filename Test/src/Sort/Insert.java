@@ -23,10 +23,6 @@ public class Insert {
     public static void main(String[] args) {
         int[] arr = {9, 5, 2, 7, 3, 6, 8};
          insertSort(arr);
-        // shellSort(arr);
-        // selectSort(arr);
-        // heapSort(arr);
-        //bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
