@@ -12,7 +12,9 @@ public class TestStack {
             2、创建一个栈用于保存字符类型
             3、遍历字符串中的每个字符
                 （1）左括号就入栈；
-                （2）右括号就取出栈顶元素比较一下
+                （2）若此时不是左括号，且栈为空，即说明没有括号适配
+                （3）若是右括号就取出栈顶元素比较一下
+           4、字符串遍历结束，且栈为空，则括号匹配，否则，不匹配
      */
 
     public boolean isValid(String s){
@@ -34,6 +36,17 @@ public class TestStack {
             }
             //如果是右括号，就取出栈顶元素，进行比较
             char top = stack.pop();
+            /*此处也可以直接列举
+            if (top == '(' && c == ')') {
+                continue;
+            }
+            if (top == '[' && c == ']') {
+                continue;
+            }
+            if (top == '{' && c == '}') {
+                continue;
+            }
+             */
             if(map.get(top) == c){
                 continue;
             }
