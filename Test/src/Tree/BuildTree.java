@@ -14,6 +14,11 @@ public class BuildTree {
             可能有多组测试数据，对于每组数据，
             输出将输入字符串建立二叉树后中序遍历的序列，每个字符后面都有一个空格。
             每个输出结果占一行。
+
+     思路：
+               1、构建正确的输入输出框架，注意输入输出格式（在牛客网中没有输入输出框架）
+               2、先序遍历构建二叉树；
+               3、中序遍历输出；
      */
     static class Node{
         int val;
@@ -30,25 +35,20 @@ public class BuildTree {
             String line = sc.next();
             Node root = build(line);
             inOrder(root);
-            System.out.println();   //没给输出占一行
+            System.out.println();   //每输出占一行
         }
     }
     private static int index = 0;
     private static Node build(String line) {
-        index = 0;
-        return createTree(line);
-    }
-
-    private static Node createTree(String line) {
         char c = line.charAt(index);
         if(c == '#'){
             return null;
         }
         Node root = new Node(c);
         index++;
-        root.left = createTree(line);
+        root.left = build(line);
         index++;
-        root.right = createTree(line);
+        root.right = build(line);
         return root;
     }
 
