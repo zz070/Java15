@@ -42,7 +42,8 @@ public class Poker {
         System.out.println("一副新的扑克牌：");
         System.out.print(poker);
         System.out.println();
-        //打乱牌的顺序
+        //打乱牌的顺序，直接使用 Collections.shuffle 方法
+        //还有一种简单的办法: 从后往前遍历 List, 取出当前元素, 再生成一个随机位置.
         Collections.shuffle(poker);
         System.out.println("经过洗牌的扑克牌：");
         System.out.print(poker);
@@ -57,6 +58,8 @@ public class Poker {
         for(int i=0;i<5;i++){
             for(int j=0;j<3;j++){
                 List<Card> players = player.get(j);
+                // remove 表示删除 List 中指定下标的元素
+                // remove 返回值表示删除的这个元素
                 Card card = poker.remove(0);
                 players.add(card);
             }
