@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 class Card{
-    private String rank;  //花色
+    private String rank;  //点数
     private String suit;    //花色
 
     public Card(String rank, String suit) {
