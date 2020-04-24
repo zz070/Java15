@@ -39,8 +39,14 @@ public class Poker {
     public static void main(String[] args) {
         //创建一副牌
         List<Card> poker = createPoker();
+        System.out.println("一副新的扑克牌：");
+        System.out.print(poker);
+        System.out.println();
         //打乱牌的顺序
         Collections.shuffle(poker);
+        System.out.println("经过洗牌的扑克牌：");
+        System.out.print(poker);
+        System.out.println();
         //创建玩家
         List<List<Card>> player = new ArrayList<>();
         //创建3个匿名对象
@@ -56,6 +62,7 @@ public class Poker {
             }
         }
         //发牌结束，查看牌
+        System.out.println("玩家手中的扑克牌");
         for(int i=0;i<3;i++){
             System.out.println("玩家"+i+":"+player.get(i));
         }
