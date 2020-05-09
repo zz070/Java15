@@ -19,7 +19,7 @@ public class Test {
         //    以及要访问的数据库名, 以及用户名和密码.
         ((MysqlDataSource) dataSource).setURL("jdbc:mysql://127.0.0.1:3306/java15_0506?characterEncoding=utf8&useSSL=true");
         ((MysqlDataSource) dataSource).setUser("root");
-        ((MysqlDataSource) dataSource).setPassword("2222");
+        ((MysqlDataSource) dataSource).setPassword("6774");
         // 3. 创建 Connection 对象, 用来表示和数据库建立了一次链接.
         Connection connection = dataSource.getConnection();
         // 4. 如果链接建立的没啥问题, 就可以操作数据库了. 核心就是拼装 SQL 语句
@@ -50,7 +50,7 @@ public class Test {
         //    以及要访问的数据库名, 以及用户名和密码.
         ((MysqlDataSource) dataSource).setURL("jdbc:mysql://127.0.0.1:3306/java15_0506?characterEncoding=utf8&useSSL=true");
         ((MysqlDataSource) dataSource).setUser("root");
-        ((MysqlDataSource) dataSource).setPassword("2222");
+        ((MysqlDataSource) dataSource).setPassword("6774");
         // 3. 建立链接
         Connection connection = dataSource.getConnection();
         // 4. 拼装 SQL 语句
