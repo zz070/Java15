@@ -63,7 +63,7 @@ public class Merge {
         }
     }
     public static void main(String[] args) {
-        int[] array = {1, 8, 6, 3, 0, 9, 2, 4, 7, 5};
+        int[] array = {6,3,4,7,2,1,9,0};
         System.out.print("排序前：");
         System.out.print(Arrays.toString(array));
         System.out.println();
