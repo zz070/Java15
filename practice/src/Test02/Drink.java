@@ -11,7 +11,7 @@ public class Drink {
         }
         if(n == 2){
             total+= 1;
-        }
+        }   
         return total;
     }
 
