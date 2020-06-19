@@ -8,7 +8,7 @@ package Test17;
      public TreeNode(int val) {
          this.val = val;
      }
-    public class tree {
+    public class Tree {
         public void Mirror(TreeNode root) {
             if(root == null){
                 return;
