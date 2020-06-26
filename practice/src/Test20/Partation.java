@@ -10,7 +10,7 @@ class ListNode {
         this.val = val;
     }
 }
-public class Partition {
+public class Partation {
     public ListNode partition(ListNode pHead, int x) {
         // write code here
         ListNode big = new ListNode(0);
