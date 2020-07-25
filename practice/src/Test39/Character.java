@@ -8,7 +8,7 @@ public class Character {
             Scanner sc = new Scanner(System.in);
             String s = sc.nextLine();
             String d = sc.nextLine();
-            ArrayList<Character> list = new ArrayList<>();
+            ArrayList<java.lang.Character> list = new ArrayList<>();
             for(int i = 0;i<s.length();i++){
                 if(!(d.contains(s.charAt(i)+""))){
                     list.add(s.charAt(i));
